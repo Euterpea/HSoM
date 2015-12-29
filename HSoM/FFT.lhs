@@ -7,7 +7,7 @@ Last Modified on: 16-Dec-2015 by Donya Quick
 This module requires the array and pure-fft packages.
 
 > {-# LANGUAGE Arrows #-}
-> module HSoM.MUI.FFT where
+> module HSoM.FFT where
 > import FRP.UISF
 > import Control.Arrow.Operations
 > import Numeric.FFT (fft)

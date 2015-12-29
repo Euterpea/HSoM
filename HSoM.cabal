@@ -9,6 +9,7 @@ stability:      experimental
 build-type:     Custom
 author:         Paul Hudak <paul.hudak@yale.edu>,
 				Donya Quick <donya.quick@yale.edu>,
+                Dan Winograd-Cort <daniel.winograd-cort@yale.edu>
 maintainer:     Donya Quick <donya.quick@yale.edu>
 bug-reports:    https://github.com/Euterpea/Euterpea/issues
 homepage:       http://haskell.cs.yale.edu/
@@ -28,8 +29,8 @@ Library
         HSoM.MoreMusic,
         HSoM.Performance,
         HSoM.MUI.MidiWidgets,
-        HSoM.MUI.FFT,
         HSoM.MUI,
+        HSoM.FFT,
         HSoM.Examples.RandomMusic,
         HSoM.Examples.SoundCheck,
         HSoM.Examples.SelfSimilar,
@@ -40,7 +41,9 @@ Library
         HSoM.Examples.MUIExamples2,
         HSoM.Examples.IntervalTrainer,
         HSoM.Examples.NewResolutions,
-        HSoM.Examples.MusicToSignal
+        HSoM.Examples.MusicToSignal,
+        HSoM.Examples.SpectrumAnalysis,
+        HSoM.Examples.Additive
   other-modules:
   build-depends:
         base >= 3 && < 5, arrows >= 0.4, array, deepseq, random,
