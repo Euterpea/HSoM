@@ -122,21 +122,21 @@ New Resolutions by Jean-Luc Ponty, Scott O'Neil, and John Garvin
 > part1 = Modify (Instrument Marimba) (Modify (Phrase [Dyn (Loudness 70)]) pattern)
 >         :+:
 >         Modify (Instrument Xylophone) (Modify (Phrase [Dyn (Loudness 120)]) melody1)
->     :=: Modify (Instrument Marimba) (Modify (Phrase [Dyn (Loudness 70)]) (timesM 4 pattern))
+>     :=: Modify (Instrument Marimba) (Modify (Phrase [Dyn (Loudness 70)]) (times 4 pattern))
 > bridge = Modify (Instrument Xylophone) (d 5 hn) -- (d 5 hn [Volume 120])
->      :=: (timesM 2 $
+>      :=: (times 2 $
 >          Modify (Instrument Marimba) (Modify (Phrase [Dyn (Loudness 60)]) (Modify (Transpose (-12)) bellPart))
 >      :=: Modify (Instrument Vibraphone) (Modify (Phrase [Dyn (Loudness 40)]) vibesPart)
 >      :=: Modify (Instrument Glockenspiel) (Modify (Phrase [Dyn (Loudness 80)]) bellPart))
 > part2 = Modify (Instrument Xylophone) (Modify (Phrase [Dyn (Loudness 120)]) melody2)
->     :=: Modify (Instrument Marimba) (Modify (Phrase [Dyn (Loudness 70)]) (timesM 3 pattern
+>     :=: Modify (Instrument Marimba) (Modify (Phrase [Dyn (Loudness 70)]) (times 3 pattern
 >                                                  :+: minArpegUp   (D,5) sn
 >                                                  :+: minArpegDown (C,5) sn
 >                                                  :+: minArpegUp   (A,4) sn
 >                                                  :+: minArpegDown (G,4) sn
 >                                                  :+: minArpegUp   (F,4) sn
 >                                                  :+: d 5 sn))
->     :=: timesM 4 (Modify (Instrument Vibraphone) (Modify (Phrase [Dyn (Loudness 40)]) vibesPart))
+>     :=: times 4 (Modify (Instrument Vibraphone) (Modify (Phrase [Dyn (Loudness 40)]) vibesPart))
 
 > run1 p d = root p d       :+: minThird p d  :+: fifth p d
 >        :+: minSeventh p d :+: octave p d    :+: oMinThird p d
@@ -145,11 +145,11 @@ New Resolutions by Jean-Luc Ponty, Scott O'Neil, and John Garvin
 
 > part3Pattern el = el (D,4) sn :+: el (C,4) sn :+: el (D,4) sn :+: el (F,4) sn
 
-> run2 p d = timesM 2 $
+> run2 p d = times 2 $
 >       fifth p d     :+: minSeventh p d :+: octave p d
 >   :+: oMinThird p d :+: octave p d     :+: minSeventh p d
 
-> run3 p d = timesM 3 $
+> run3 p d = times 3 $
 >       oMinThird p d :+: octave p d :+: minSeventh p d :+: fifth p d
 
 > vibeLine3 = let el = \p -> octave p den :+: fifth p den
@@ -161,7 +161,7 @@ New Resolutions by Jean-Luc Ponty, Scott O'Neil, and John Garvin
 
 > melody3 = a 5 (11/16) :+: f 6 sn
 >       :+: ef 6 en :+: d 6 en :+: c 6 en :+: g 5 dqn
->       :+: timesM 3 (a 5 sn :+: f 6 en) :+: a 5 en
+>       :+: times 3 (a 5 sn :+: f 6 en) :+: a 5 en
 >       :+: f 6 en :+: af 5 en :+: f 6 en :+: af 5 en
 >       :+: minArpegDown (F,5) sn :+: snr
 >       :+: majArpegDown (F,5) sn :+: snr
@@ -172,14 +172,14 @@ New Resolutions by Jean-Luc Ponty, Scott O'Neil, and John Garvin
 >       :+: six3ArpegDown (F,5) sn :+: snr :+: f 6 sn :+: d 6 sn
 >       :+: minArpegDown (F,5) sn :+: snr
 >       :+: minArpegDown (F,5) sn :+: af 5 sn :+: c 6 sn :+: f 6 sn
->       :+: line (map (timesM 2) [f 6 sn, d 6 sn, c 6 sn,
+>       :+: line (map (times 2) [f 6 sn, d 6 sn, c 6 sn,
 >                                a 5 sn, g 5 sn, f 5 sn])
 >       :+: ef 5 sn :+: f 5 sn :+: g 5 sn :+: bf 5 sn
 >       :+: c 6 sn :+: d 6 sn :+: ef 6 sn :+: d 6 sn
 >       :+: c 6 sn :+: bf 5 sn :+: a 5 sn :+: g 5 sn
->       :+: timesM 4 (a 5 sn :+: a 5 sn :+: g 5 sn)
->       :+: timesM 2 (af 5 sn :+: af 5 sn :+: g 5 sn)
->       :+: timesM 2 (af 5 sn :+: g 5 sn :+: f 5 sn)
+>       :+: times 4 (a 5 sn :+: a 5 sn :+: g 5 sn)
+>       :+: times 2 (af 5 sn :+: af 5 sn :+: g 5 sn)
+>       :+: times 2 (af 5 sn :+: g 5 sn :+: f 5 sn)
 >       :+: a 5 dqn
 >       :+: f 6 sn :+: d 6 sn :+: c 6 sn
 >       :+: a 5 sn :+: g 5 sn :+: f 5 sn
@@ -206,7 +206,7 @@ New Resolutions by Jean-Luc Ponty, Scott O'Neil, and John Garvin
 >                                              :=: part3Pattern run2
 >                                              :=: Modify (Transpose 12) (part3Pattern run3))
 >     :=: Modify (Phrase [Dyn (Loudness 70)]) (Modify (Instrument Vibraphone) vibePart3)
->     :+: (timesM 4 harmony3 :=: Modify (Phrase [Dyn (Loudness 100)]) (Modify (Instrument Xylophone) melody3)
+>     :+: (times 4 harmony3 :=: Modify (Phrase [Dyn (Loudness 100)]) (Modify (Instrument Xylophone) melody3)
 >                                                        :=: (Modify (Instrument Marimba) melody3))
 
 > all3Insts m = Modify (Instrument Marimba) m

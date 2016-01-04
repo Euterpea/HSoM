@@ -70,10 +70,10 @@ The outFile function will produce a monaural or stereo file accordingly.
 
 This stuff is taken from Euterpea.Examples.Interlude:
 
-> bassLine =  timesM 3 b1 :+: timesM 2 b2 :+: 
->             timesM 4 b3 :+: timesM 5 b1
+> bassLine =  times 3 b1 :+: times 2 b2 :+: 
+>             times 4 b3 :+: times 5 b1
 
-> mainVoice = timesM 3 v1 :+: v2
+> mainVoice = times 3 v1 :+: v2
 
 > v1   = v1a :+: graceNote (-1) (d 5 qn) :+: v1b                 -- bars 1-2
 > v1a  = addDur en [a 5, e 5, d 5, fs 5, cs 5, b 4, e 5, b 4]

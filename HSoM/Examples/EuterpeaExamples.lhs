@@ -53,7 +53,7 @@ Test of various articulations and dynamics:
 
 Example from the SelfSimilar module.
 
-> t10s   = play (rep (delayM (dur ttm0)) (Modify (Transpose 4)) 2 ttm0)
+> t10s   = play (rep (offset (dur ttm0)) (Modify (Transpose 4)) 2 ttm0)
 
 -----------------------------------------------------------------------------
 
@@ -107,7 +107,7 @@ Tests of drum.
 > -- a "funk groove"
 > t14b = let p1 = perc LowTom        qn
 >            p2 = perc AcousticSnare en
->        in play (Modify (Tempo 3) (Modify (Instrument Percussion) (cut 8 (repeatM
+>        in play (Modify (Tempo 3) (Modify (Instrument Percussion) (cut 8 (forever
 >                  ((p1 :+: qnr :+: p2 :+: qnr :+: p2 :+:
 >                    p1 :+: p1 :+: qnr :+: p2 :+: enr)
 >                   :=: roll en (perc ClosedHiHat 2))))))
@@ -116,7 +116,7 @@ Tests of drum.
 > t14c = let p1 = perc CrashCymbal2  qn
 >            p2 = perc AcousticSnare en
 >            p3 = perc LowTom        qn
->        in play (Modify (Tempo 3) (Modify (Instrument Percussion) (cut 4 (repeatM
+>        in play (Modify (Tempo 3) (Modify (Instrument Percussion) (cut 4 (forever
 >                  ((p1 :+: (Modify (Tempo (3/2)) (p2 :+: enr :+: p2))
 >                   :=: (p3 :+: qnr)) )))))
 

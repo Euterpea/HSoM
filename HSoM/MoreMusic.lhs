@@ -78,7 +78,7 @@
 > funkGroove
 >   =  let  p1  = perc LowTom         qn
 >           p2  = perc AcousticSnare  en
->      in  tempo 3 $ instrument Percussion $ takeM 8 $ repeatM
+>      in  tempo 3 $ instrument Percussion $ cut 8 $ forever
 >          (  (  p1 :+: qnr :+: p2 :+: qnr :+: p2 :+:
 >                p1 :+: p1 :+: qnr :+: p2 :+: enr)
 >             :=: roll en (perc ClosedHiHat 2) )
@@ -92,12 +92,12 @@
 > run,  cascade,  cascades,  final :: Music Pitch
 > run', cascade', cascades', final' :: Music Pitch
 
-> run       = rep (transpose 5) (delayM tn) 8 (c 4 tn)
-> cascade   = rep (transpose 4) (delayM en) 8 run
-> cascades  = rep  id           (delayM sn) 2 cascade
+> run       = rep (transpose 5) (offset tn) 8 (c 4 tn)
+> cascade   = rep (transpose 4) (offset en) 8 run
+> cascades  = rep  id           (offset sn) 2 cascade
 
-> final = cascades :+: revM cascades
-> run'       = rep (delayM tn) (transpose 5) 8 (c 4 tn)
-> cascade'   = rep (delayM en) (transpose 4) 8 run'
-> cascades'  = rep (delayM sn)  id           2 cascade'
-> final'     = cascades' :+: revM cascades'
+> final = cascades :+: retro cascades
+> run'       = rep (offset tn) (transpose 5) 8 (c 4 tn)
+> cascade'   = rep (offset en) (transpose 4) 8 run'
+> cascades'  = rep (offset sn)  id           2 cascade'
+> final'     = cascades' :+: retro cascades'

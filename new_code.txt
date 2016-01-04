@@ -1,0 +1,38 @@
+Removed from Music.lhs
+
+> type LazyDur = [Dur]
+> durL :: Music a -> LazyDur
+> durL m@(Prim _)            =  [dur m]
+> durL (m1 :+: m2)           =  let d1 = durL m1
+>                               in d1 ++ map (+(last d1)) (durL m2)
+> durL (m1 :=: m2)           =  mergeLD (durL m1) (durL m2)
+> durL (Modify (Tempo r) m)  =  map (/r) (durL m)
+> durL (Modify _ m)          =  durL m 
+
+> mergeLD :: LazyDur -> LazyDur -> LazyDur
+> mergeLD [] ld = ld
+> mergeLD ld [] = ld
+> mergeLD ld1@(d1:ds1) ld2@(d2:ds2) = 
+>   if d1<d2  then  d1 : mergeLD ds1 ld2
+>             else  d2 : mergeLD ld1 ds2
+
+> minL :: LazyDur -> Dur -> Dur
+> minL []      d' = d'
+> minL [d]     d' = min d d'
+> minL (d:ds)  d' = if d < d' then minL ds d' else d'
+
+> cutL :: LazyDur -> Music a -> Music a
+> cutL [] m                     = rest 0
+> cutL (d:ds) m | d <= 0        = cutL ds m
+> cutL ld (Prim (Note oldD p))  = note (minL ld oldD) p
+> cutL ld (Prim (Rest oldD))    = rest (minL ld oldD)
+> cutL ld (m1 :=: m2)           = cutL ld m1 :=: cutL ld m2
+> cutL ld (m1 :+: m2)           =  
+>    let  m'1 = cutL ld m1
+>         m'2 = cutL (map (\d -> d - dur m'1) ld) m2
+>    in m'1 :+: m'2
+> cutL ld (Modify (Tempo r) m)  = tempo r (cutL (map (*r) ld) m)
+> cutL ld (Modify c m)          = Modify c (cutL ld m)
+
+> (/=:)      :: Music a -> Music a -> Music a
+> m1 /=: m2  = cutL (durL m2) m1 :=: cutL (durL m1) m2

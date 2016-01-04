@@ -33,7 +33,7 @@
 > m0   = [(1,2),(1,0),(1,5),(1,7)]
 
 > tm0  = instrument Vibraphone (ss m0 4 50 20)
-> ttm0 = tm0 :=: transpose (12) (revM tm0)
+> ttm0 = tm0 :=: transpose (12) (retro tm0)
 
 > m1   :: [SNote]
 > m1   = [(1,0),(0.5,0),(0.5,0)]
@@ -50,7 +50,7 @@
 
 > ttm3  =  let  l1 =  instrument Flute tm3
 >               l2 =  instrument AcousticBass $
->                       transpose (-9) (revM tm3)
+>                       transpose (-9) (retro tm3)
 >          in l1 :=: l2
 
 > m4    :: [SNote]

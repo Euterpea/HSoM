@@ -17,7 +17,7 @@ Authors: Paul Hudak, Donya Quick, and Dan Winograd-Cort
 > ) where
 
 > import FRP.UISF hiding ((~++))
-> import Euterpea hiding (Time, SF)
+> import Euterpea hiding (Time, SF, delay)
 
 > -- for musicToMsgs
 > import Data.List (nub, elemIndex, sortBy)
