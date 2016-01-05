@@ -26,11 +26,11 @@ Library
   exposed-modules: 
         System.Random.Distributions,
         HSoM,
-        HSoM.MoreMusic,
         HSoM.Performance,
         HSoM.MUI.MidiWidgets,
         HSoM.MUI,
-        HSoM.FFT,
+        HSoM.Examples.FFT,
+        HSoM.Examples.MoreMusic,
         HSoM.Examples.RandomMusic,
         HSoM.Examples.SoundCheck,
         HSoM.Examples.SelfSimilar,

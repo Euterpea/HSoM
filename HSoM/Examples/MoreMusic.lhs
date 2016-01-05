@@ -1,4 +1,4 @@
-> module HSoM.MoreMusic where
+> module HSoM.Examples.MoreMusic where
 > import Euterpea
 
 > pr1, pr2 :: Pitch -> Music Pitch

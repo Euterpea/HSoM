@@ -2,7 +2,7 @@ The first phrase of the flute part of "Stars and Stripes Forever."
 
 > module HSoM.Examples.SSF where
 > import Euterpea
-> import HSoM.MoreMusic
+> import HSoM.Examples.MoreMusic
 
 > legato = Legato (11/10)
 > staccato = Staccato (5/10)

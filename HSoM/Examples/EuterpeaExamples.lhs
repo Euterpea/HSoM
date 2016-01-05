@@ -1,6 +1,6 @@
 > module HSoM.Examples.EuterpeaExamples where
 > import Euterpea
-> import HSoM.MoreMusic
+> import HSoM.Examples.MoreMusic
 > import HSoM.Examples.Interlude
 > import HSoM.Examples.SelfSimilar
 > import HSoM.Examples.SSF
