@@ -14,38 +14,38 @@
 > graceNote n  _                  = 
 >           error "Can only add a grace note to a note."
 
-> b1  = addDur dqn [b 3,   fs 4,  g 4,   fs 4]
-> b2  = addDur dqn [b 3,   es 4,  fs 4,  es 4]
-> b3  = addDur dqn [as 3,  fs 4,  g 4,   fs 4]
+> b1  = addDur dqn [b 2,   fs 3,  g 3,   fs 3]
+> b2  = addDur dqn [b 2,   es 3,  fs 3,  es 3]
+> b3  = addDur dqn [as 2,  fs 3,  g 3,   fs 3]
 
 > bassLine =  times 3 b1 :+: times 2 b2 :+: 
 >             times 4 b3 :+: times 5 b1
 
 > mainVoice = times 3 v1 :+: v2
 
-> v1   = v1a :+: graceNote (-1) (d 5 qn) :+: v1b                 --  bars 1-2
-> v1a  = addDur en [a 5, e 5, d 5, fs 5, cs 5, b 4, e 5, b 4]
-> v1b  = addDur en [cs 5, b 4]
+> v1   = v1a :+: graceNote (-1) (d 4 qn) :+: v1b                 --  bars 1-2
+> v1a  = addDur en [a 4, e 4, d 4, fs 4, cs 4, b 3, e 4, b 3]
+> v1b  = addDur en [cs 4, b 3]
 
 > v2 = v2a :+: v2b :+: v2c :+: v2d :+: v2e :+: v2f :+: v2g
 
-> v2a  =  line [  cs 5 (dhn+dhn), d 5 dhn, 
->                 f 5 hn, gs 5 qn, fs 5 (hn+en), g 5 en]     --  bars 7-11
-> v2b  =  addDur en [  fs 5, e 5, cs 5, as 4] :+: a 4 dqn :+:
->         addDur en [  as 4, cs 5, fs 5, e 5, fs 5]          --  bars 12-13
-> v2c  =  line [  g 5 en, as 5 en, cs 6 (hn+en), d 6 en, cs 6 en] :+:
->         e 5 en :+: enr :+: 
->         line [  as 5 en, a 5 en, g 5 en, d 5 qn, c 5 en, cs 5 en] 
+> v2a  =  line [  cs 4 (dhn+dhn), d 4 dhn, 
+>                 f 4 hn, gs 4 qn, fs 4 (hn+en), g 4 en]     --  bars 7-11
+> v2b  =  addDur en [  fs 4, e 4, cs 4, as 3] :+: a 3 dqn :+:
+>         addDur en [  as 3, cs 4, fs 4, e 4, fs 4]          --  bars 12-13
+> v2c  =  line [  g 4 en, as 4 en, cs 5 (hn+en), d 5 en, cs 5 en] :+:
+>         e 4 en :+: enr :+: 
+>         line [  as 4 en, a 4 en, g 4 en, d 4 qn, c 4 en, cs 4 en] 
 >                                                            --  bars 14-16
-> v2d  =  addDur en [  fs 5, cs 5, e 5, cs 5, 
->                      a 4, as 4, d 5, e 5, fs 5]            --  bars 17-18.5
-> v2e  =  line [  graceNote 2 (e 5 qn), d 5 en, graceNote 2 (d 5 qn), cs 5 en,
->                 graceNote 1 (cs 5 qn), b 4 (en+hn), cs 5 en, b 4 en ]  
+> v2d  =  addDur en [  fs 4, cs 4, e 4, cs 4, 
+>                      a 3, as 3, d 4, e 4, fs 4]            --  bars 17-18.5
+> v2e  =  line [  graceNote 2 (e 4 qn), d 4 en, graceNote 2 (d 4 qn), cs 4 en,
+>                 graceNote 1 (cs 4 qn), b 3 (en+hn), cs 4 en, b 3 en ]  
 >                                                            --  bars 18.5-20
-> v2f  =  line [  fs 5 en, a 5 en, b 5 (hn+qn), a 5 en, fs 5 en, e 5 qn,
->                 d 5 en, fs 5 en, e 5 hn, d 5 hn, fs 5 qn]  --  bars 21-23
-> v2g  =  tempo (3/2) (line [cs 5 en, d 5 en, cs 5 en]) :+: 
->         b 4 (3*dhn+hn)                                     --  bars 24-28
+> v2f  =  line [  fs 4 en, a 4 en, b 4 (hn+qn), a 4 en, fs 4 en, e 4 qn,
+>                 d 4 en, fs 4 en, e 4 hn, d 4 hn, fs 4 qn]  --  bars 21-23
+> v2g  =  tempo (3/2) (line [cs 4 en, d 4 en, cs 4 en]) :+: 
+>         b 3 (3*dhn+hn)                                     --  bars 24-28
 
 > childSong6 :: Music Pitch
 > childSong6 =  let t = (dhn/qn)*(69/120)
@@ -63,5 +63,5 @@
 >                    m   = instrument Flute m1 :=: instrument VoiceOohs m2
 >               in m :+: transpose 5 m :+: m
 
-> mel1 = [c 5 en, e 5 sn, g 5 en, b 5 sn, a 5 en, f 5 sn, d 5 en, b 4 sn, c 5 en]
-> mel2 = [c 5 sn, e 5 sn, g 5 sn, b 5 sn, a 5 sn, f 5 sn, d 5 sn, b 4 sn, c 5 sn]
+> mel1 = [c 4 en, e 4 sn, g 4 en, b 4 sn, a 4 en, f 4 sn, d 4 en, b 3 sn, c 4 en]
+> mel2 = [c 4 sn, e 4 sn, g 4 sn, b 4 sn, a 4 sn, f 3 sn, d 4 sn, b 3 sn, c 4 sn]
