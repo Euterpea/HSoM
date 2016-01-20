@@ -47,7 +47,7 @@ Library
   other-modules:
   build-depends:
         base >= 3 && < 5, arrows >= 0.4, array, deepseq, random,
-        PortMidi, Euterpea, HCodecs >= 0.2, 
+        PortMidi, Euterpea >= 2.0, HCodecs >= 0.2, 
         stm, containers, bytestring, heap == 0.6.0, 
         markov-chain, pure-fft, 
         UISF >= 0.4
