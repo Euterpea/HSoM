@@ -7,6 +7,7 @@
 > import System.Random (randomRIO)
 > import Codec.Midi (Message(ProgramChange))
 > import FRP.UISF.AuxFunctions (concatA, evMap)
+> import Data.Monoid
 
 
 > main = runMUI (defaultMUIParams {uiSize=(600,700), uiTitle="Interval Trainer"}) intervalTrainer
