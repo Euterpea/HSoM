@@ -43,7 +43,9 @@ Library
         HSoM.Examples.NewResolutions,
         HSoM.Examples.MusicToSignal,
         HSoM.Examples.SpectrumAnalysis,
-        HSoM.Examples.Additive
+        HSoM.Examples.Additive,
+        HSoM.Examples.AMandFM,
+        HSoM.Examples.PhysicalModelling
   other-modules:
   build-depends:
         base >= 3 && < 5, arrows >= 0.4, array, deepseq, random,

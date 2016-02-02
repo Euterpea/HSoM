@@ -69,13 +69,11 @@ merge a@(e1:es1)  b@(e2:es2)  =
 
 > data Player a = MkPlayer {  pName         :: PlayerName, 
 >                             playNote      :: NoteFun a,
->                             interpPhrase  :: PhraseFun a, 
->                             notatePlayer  :: NotateFun a }
+>                             interpPhrase  :: PhraseFun a}
 
 > type NoteFun a    =  Context a -> Dur -> a -> Performance
 > type PhraseFun a  =  PMap a -> Context a -> [PhraseAttribute]
 >                      -> Music a -> (Performance, DurT)
-> type NotateFun a  =  ()
 
 > instance Show a => Show (Player a) where
 >    show p = pName p
@@ -84,8 +82,7 @@ merge a@(e1:es1)  b@(e2:es2)  =
 > defPlayer  = MkPlayer 
 >              {  pName         = "Default",
 >                 playNote      = defPlayNote      defNasHandler,
->                 interpPhrase  = defInterpPhrase  defPasHandler,
->                 notatePlayer  = () }
+>                 interpPhrase  = defInterpPhrase  defPasHandler}
 
 > defPlayNote ::  (Context (Pitch,[a]) -> a -> MEvent-> MEvent)
 >                 -> NoteFun (Pitch, [a])
@@ -136,8 +133,7 @@ merge a@(e1:es1)  b@(e2:es2)  =
 > fancyPlayer :: Player (Pitch, [NoteAttribute])
 > fancyPlayer  = MkPlayer {  pName         = "Fancy",
 >                            playNote      = defPlayNote defNasHandler,
->                            interpPhrase  = fancyInterpPhrase,
->                            notatePlayer  = () }
+>                            interpPhrase  = fancyInterpPhrase}
 
 > fancyInterpPhrase             :: PhraseFun a
 > fancyInterpPhrase pm c [] m   = perf pm c m
