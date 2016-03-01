@@ -49,8 +49,8 @@ Library
   other-modules:
   build-depends:
         base >= 3 && < 5, arrows >= 0.4, array, deepseq, random,
-        PortMidi, Euterpea >= 2.0, HCodecs >= 0.2, 
-        stm, containers, bytestring, heap == 0.6.0, 
+        Euterpea >= 2.0, HCodecs >= 0.2, 
+        containers,
         markov-chain, pure-fft, 
         UISF >= 0.4
   if (impl(ghc >= 6.10))
