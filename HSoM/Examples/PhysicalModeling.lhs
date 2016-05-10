@@ -53,4 +53,6 @@
 >          out    <- filterLowPassBW -< (x-x*x*x + flute*0.4, 2000)
 >     outA -< out*amp*env2
     
-> tFlute = outFile "tFlute.wav" 5 $ flute 5 0.7 440 0.99 0.2 
+
+> tFlute = outFile "tFlute.wav" 5 $ flute 5 0.3 440 0.99 0.2 
+> tFlute2 = outFileNorm "tFlute2.wav" 5 $ flute 5 0.7 440 0.99 0.2 
