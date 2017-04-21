@@ -296,9 +296,10 @@ that just the radio button index as the radio widget would return.
 > selectDev t getDevs = initialAIO getDevs $ \devices ->
 >   let devs = filter (\(i,d) -> name d /= "Microsoft MIDI Mapper") devices
 >       defaultChoice = if null devs then (-1) else 0
+>       names = if null devs then ["(No Devices)"] else map (name . snd) devs
 >   in  title t $ proc _ -> do
->       r <- radio (map (name . snd) devs) defaultChoice -< ()
->       returnA -< if r == -1 then Nothing else Just $ fst (devs !! r)
+>       r <- radio names 0 -< ()
+>       returnA -< if null devs then Nothing else Just $ fst (devs !! r)
 
 
 The selectInputM and selectOutputM widgets use checkboxes instead of 
