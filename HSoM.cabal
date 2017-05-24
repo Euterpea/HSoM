@@ -10,7 +10,7 @@ build-type:     Custom
 author:         Paul Hudak <paul.hudak@yale.edu>,
 				Donya Quick <donya.quick@yale.edu>,
                 Dan Winograd-Cort <daniel.winograd-cort@yale.edu>
-maintainer:     Donya Quick <donya.quick@yale.edu>
+maintainer:     Donya Quick <donyaquick@gmail.com>
 bug-reports:    https://github.com/Euterpea/Euterpea/issues
 homepage:       http://haskell.cs.yale.edu/
 synopsis:       Library for computer music education
@@ -50,7 +50,7 @@ Library
   build-depends:
         base >= 3 && < 5, arrows >= 0.4, array, deepseq, random,
         PortMidi, Euterpea >= 2.0, HCodecs >= 0.2, 
-        stm, containers, bytestring, heap == 0.6.0, 
+        stm, containers, bytestring, heap >= 1.0 && < 2.0, 
         markov-chain, pure-fft, 
         UISF >= 0.4
   if (impl(ghc >= 6.10))
