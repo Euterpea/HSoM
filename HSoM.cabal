@@ -48,10 +48,9 @@ Library
         HSoM.Examples.PhysicalModeling
   other-modules:
   build-depends:
-        base >= 3 && < 5, arrows >= 0.4, array, deepseq, random,
-        PortMidi, Euterpea >= 2.0, HCodecs >= 0.2, 
-        stm, containers, bytestring, heap >= 1.0 && < 2.0, 
-        markov-chain, pure-fft, 
+        base >= 3 && < 5, arrows >= 0.4, array, deepseq, random, 
+        HCodecs >= 0.2, Euterpea >= 2.0.3, 
+        containers, markov-chain, pure-fft, 
         UISF >= 0.4
   if (impl(ghc >= 6.10))
     build-depends: base >= 4 && < 5, ghc-prim
