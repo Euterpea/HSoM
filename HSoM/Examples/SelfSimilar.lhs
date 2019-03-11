@@ -7,7 +7,7 @@
 > type SNote    = (Dur,AbsPitch)
 
 > selfSim      :: [SNote] -> Cluster
-> selfSim pat  = Cluster (0,0) (map mkCluster pat)
+> selfSim pat  = Cluster (1,0) (map mkCluster pat)
 >     where mkCluster note =
 >             Cluster note (map (mkCluster . addMult note) pat)
 
