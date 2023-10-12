@@ -17,7 +17,7 @@ synopsis:       Library for computer music education
 description:
         TBD
 extra-source-files:
-        readme.txt
+        README.md
 
 Library
   hs-source-dirs: .
